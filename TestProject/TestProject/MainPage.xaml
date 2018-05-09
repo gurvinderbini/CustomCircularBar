@@ -8,7 +8,7 @@
     <control:CustomControl Margin="20" ProgressColor="Red" BaseColor="Blue" Progress=".9"
                            ControlHeight="200" Icon="google.png" 
                            Title="What is this fed?" TitleFontSize="15" TitleTextColor="Blue"
-                           TotalProgressCount="3" CurrentProgressCount="1">
+                           TotalProgressCount="3" CurrentProgressCount="1" StepCount="1">
       
     </control:CustomControl>
 

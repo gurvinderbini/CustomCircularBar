@@ -151,11 +151,24 @@ namespace TestProject.Control
 	        get => (Color)GetValue(TitleTextColorProperty);
 	        set => SetValue(TitleTextColorProperty, value);
 	    }
+
+	    public static readonly BindableProperty StepCountProperty =
+	        BindableProperty.Create(
+	            nameof(StepCount),
+	            typeof(double),
+	            typeof(CustomControl),
+	            0d);
+
+	    public double StepCount
+        {
+	        get => (double)GetValue(StepCountProperty);
+	        set => SetValue(StepCountProperty, value);
+	    }
         #endregion
 
         #region Count Label Properties
 
-	    public static readonly BindableProperty TotalProgressCountProperty =
+        public static readonly BindableProperty TotalProgressCountProperty =
 	        BindableProperty.Create(
 	            nameof(TotalProgressCount),
 	            typeof(double),
@@ -216,10 +229,13 @@ namespace TestProject.Control
                     TitleLabel.Text = Title;
                     break;
                 case "TitleFontSize":
-                    TitleLabel.FontSize = TitleFontSize;
+                    StepCountLabel.FontSize= TitleLabel.FontSize = TitleFontSize;
                     break;
                 case "TitleTextColor":
-                    TitleLabel.TextColor = TitleTextColor;
+                  StepCountLabel.TextColor=  TitleLabel.TextColor = TitleTextColor;
+                    break;
+                case "StepCount":
+                    StepCountLabel.Text =$"{Convert.ToString(StepCount, CultureInfo.InvariantCulture)}." ;
                     break;
 
 
