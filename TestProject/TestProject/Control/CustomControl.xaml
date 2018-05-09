@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:plugin="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
              xmlns:control="clr-namespace:TestProject.Control;assembly=TestProject"
              x:Class="TestProject.Control.CustomControl">
     <ContentView.Content >
@@ -15,7 +14,7 @@
                    HorizontalOptions="Center" VerticalOptions="Center" ></control:ImageCircle>-->
             <Image x:Name="BaseImage" Grid.Row="0"  Aspect="AspectFit"  
                    HorizontalOptions="Center" VerticalOptions="Center" ></Image>
-            <plugin:ProgressRing x:Name="ProgressRing" Grid.Row="0"/>
+            <control:ProgressRing x:Name="ProgressRing" Grid.Row="0"/>
             <StackLayout  Grid.Row="1" Orientation="Horizontal" Spacing="2"  HorizontalOptions="CenterAndExpand">
                 <Label x:Name="StepCountLabel" />
                 <Label x:Name="TitleLabel"></Label>
