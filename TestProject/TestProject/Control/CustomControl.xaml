@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:plugin="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
              x:Class="TestProject.Control.CustomControl">
-  <ContentView.Content >
-      <Grid RowSpacing="0">
-          <Grid.RowDefinitions>
+    <ContentView.Content >
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
                 <RowDefinition x:Name="RowDefinition1" Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -14,9 +14,14 @@
             <Image x:Name="BaseImage" Grid.Row="0"  Aspect="AspectFit"  
                    HorizontalOptions="Center" VerticalOptions="Center" ></Image>
             <plugin:ProgressRing x:Name="ProgressRing" Grid.Row="0"/>
-          <Label x:Name="TitleLabel" Grid.Row="1" HorizontalOptions="CenterAndExpand" ></Label>
-          <Label Grid.Row="2" HorizontalOptions="CenterAndExpand" Text="1 of 3"
-                 TextColor="Gray" FontSize="Micro"></Label>
+            <Label x:Name="TitleLabel" Grid.Row="1" HorizontalOptions="CenterAndExpand" ></Label>
+            <StackLayout  Grid.Row="2" Orientation="Horizontal" Spacing="1"  HorizontalOptions="CenterAndExpand">
+                <Label x:Name="CurrentCountLabel" Text="1" FontSize="Micro"/>
+                <Label Text="of" FontSize="Micro"/>
+                <Label x:Name="TotalCountLabel" Text="3" FontSize="Micro"/>
+            </StackLayout>
+            <!--<Label x:Name="CountLabel" Grid.Row="2" HorizontalOptions="CenterAndExpand" Text="1 of 3"
+                 TextColor="Gray" FontSize="Micro"></Label>-->
         </Grid>
-  </ContentView.Content>
+    </ContentView.Content>
 </ContentView>
