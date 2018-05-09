@@ -17,7 +17,6 @@ namespace TestProject.Control
 		{
 			InitializeComponent ();
 		    AdjustControlHeight();
-            AdjustControlWidth();
 
 
 		}
@@ -77,18 +76,18 @@ namespace TestProject.Control
 	        set => SetValue(ControlHeightProperty, value);
 	    }
 
-	    public static readonly BindableProperty ControlWidthProperty =
-	        BindableProperty.Create(
-	            nameof(ControlWidth),
-	            typeof(double),
-	            typeof(CustomControl),
-	            100d);
+	    //public static readonly BindableProperty ControlWidthProperty =
+	    //    BindableProperty.Create(
+	    //        nameof(ControlWidth),
+	    //        typeof(double),
+	    //        typeof(CustomControl),
+	    //        100d);
 
-	    public double ControlWidth
-	    {
-	        get => (double)GetValue(ControlWidthProperty);
-	        set => SetValue(ControlWidthProperty, value);
-	    }
+	    //public double ControlWidth
+	    //{
+	    //    get => (double)GetValue(ControlWidthProperty);
+	    //    set => SetValue(ControlWidthProperty, value);
+	    //}
         #endregion
 
 
@@ -109,12 +108,10 @@ namespace TestProject.Control
 	                break;
 	            case "ControlHeight":
 	                ProgressRing.HeightRequest = ControlHeight;
-	                AdjustControlHeight();
+	                ProgressRing.WidthRequest = ControlHeight;
+                    AdjustControlHeight();
                     break;
-	            case "ControlWidth":
-	                ProgressRing.WidthRequest = ControlWidth;
-	                AdjustControlWidth();
-                    break;
+	           
             }
 	     
         }
@@ -125,13 +122,11 @@ namespace TestProject.Control
 	    private void AdjustControlHeight()
 	    {
 	        BaseImage.HeightRequest = ControlHeight * .8;
-	        ProgressRing.RingThickness = ControlHeight * .08;
+	        BaseImage.WidthRequest = ControlHeight * .8;
+            ProgressRing.RingThickness = ControlHeight * .08;
+	        BaseImage.Margin = ControlHeight * .05;
 	    }
-	    private void AdjustControlWidth()
-	    {
-	        BaseImage.WidthRequest = ControlWidth * .8;
-	       // ProgressRing.RingThickness = ControlHeight * .08;
-	    }
+	   
         #endregion
     }
 }

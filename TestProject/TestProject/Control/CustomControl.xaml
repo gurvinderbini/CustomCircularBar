@@ -11,11 +11,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Image x:Name="BaseImage" Grid.Row="0" Source="download.png" Aspect="AspectFit" HeightRequest="160"
-                 WidthRequest="160" HorizontalOptions="Center" VerticalOptions="Center" Margin="5"></Image>
-            <plugin:ProgressRing x:Name="ProgressRing" Grid.Row="0" RingThickness="16" Progress="0.3" HeightRequest="200" 
-                               RingBaseColor="Green" RingProgressColor="Blue"
-                               WidthRequest="200"/>
+            <Image x:Name="BaseImage" Grid.Row="0" Source="demo.png" Aspect="AspectFit"  
+                   HorizontalOptions="Center" VerticalOptions="Center" ></Image>
+            <plugin:ProgressRing x:Name="ProgressRing" Grid.Row="0"/>
           <Label Grid.Row="1" HorizontalOptions="CenterAndExpand" Text="1. What is the fed?"
                  TextColor="DarkGreen" FontSize="Small"></Label>
           <Label Grid.Row="2" HorizontalOptions="CenterAndExpand" Text="1 of 3"

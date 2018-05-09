@@ -6,7 +6,7 @@
              x:Class="TestProject.MainPage">
 
     <control:CustomControl Margin="20" ProgressColor="Red" BaseColor="Blue" Progress=".9"
-                           ControlHeight="80" ControlWidth="80">
+                           ControlHeight="150" >
       
     </control:CustomControl>
 
