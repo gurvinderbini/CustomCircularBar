@@ -22,9 +22,9 @@
             </StackLayout>
             
             <StackLayout  Grid.Row="2" Orientation="Horizontal" Spacing="2"  HorizontalOptions="CenterAndExpand">
-                <Label x:Name="CurrentCountLabel" Text="1" FontSize="Small"/>
-                <Label Text="of" FontSize="Small"/>
-                <Label x:Name="TotalCountLabel" Text="3" FontSize="Small"/>
+                <Label x:Name="CurrentCountLabel" Text="1" FontSize="Small" TextColor="#B3936D"/>
+                <Label Text="of" FontSize="Small" TextColor="#B3936D"/>
+                <Label x:Name="TotalCountLabel" Text="3" FontSize="Small" TextColor="#B3936D"/>
             </StackLayout>
         </Grid>
     </ContentView.Content>

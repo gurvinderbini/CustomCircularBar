@@ -4,13 +4,21 @@
              xmlns:plugin="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
              xmlns:control="clr-namespace:TestProject.Control;assembly=TestProject"
              x:Class="TestProject.MainPage">
-
-    <control:CustomControl Margin="20" ProgressColor="Red" BaseColor="Blue" Progress=".9"
+    <StackLayout>
+        <control:CustomControl Margin="20" ProgressColor="Red" BaseColor="Blue" Progress=".9"
                            ControlHeight="200" Icon="google.png" 
-                           Title="What is this fed?" TitleFontSize="15" TitleTextColor="Blue"
+                           Title="What is the fed?" TitleFontSize="15" TitleTextColor="Blue"
                            TotalProgressCount="3" CurrentProgressCount="1" StepCount="1">
-      
-    </control:CustomControl>
+        </control:CustomControl>
+        <control:CustomControl Margin="20" ProgressColor="#B3936D" BaseColor="#F5F4EF" Progress=".4"
+                               ControlHeight="200" Icon="download.png" 
+                               Title="Structure " TitleFontSize="15" TitleTextColor="#4F6C5A"
+                               TotalProgressCount="3" CurrentProgressCount="2" StepCount="1">
+
+        </control:CustomControl>
+
+
+    </StackLayout>
 
 
 
