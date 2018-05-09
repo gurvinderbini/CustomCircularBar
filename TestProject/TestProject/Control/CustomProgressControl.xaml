@@ -10,11 +10,13 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <!--<control:ImageCircle  Grid.Row="0"  Aspect="AspectFit"  BackgroundColor="DarkGreen"
-                   HorizontalOptions="Center" VerticalOptions="Center" ></control:ImageCircle>-->
+            <control:MyBoxView x:Name="MyBoxView" Grid.Row="0" 
+                               HorizontalOptions="Center" VerticalOptions="Center" />
+
             <Image x:Name="BaseImage" Grid.Row="0"  Aspect="AspectFit"  
                    HorizontalOptions="Center" VerticalOptions="Center" ></Image>
             <control:ProgressRing x:Name="ProgressRing" Grid.Row="0"/>
+           
             <StackLayout  Grid.Row="1" Orientation="Horizontal" Spacing="2"  HorizontalOptions="CenterAndExpand">
                 <Label x:Name="StepCountLabel" />
                 <Label x:Name="TitleLabel"></Label>

@@ -104,11 +104,25 @@ namespace TestProject.Control
 	        get => (string)GetValue(IconProperty);
 	        set => SetValue(IconProperty, value);
 	    }
+
+	    public static readonly BindableProperty IconBackgroundColorProperty =
+	        BindableProperty.Create(
+	            nameof(IconBackgroundColor),
+	            typeof(Color),
+	            typeof(CustomProgressControl),
+	            Color.White);
+
+	    public Color IconBackgroundColor
+	    {
+	        get => (Color)GetValue(IconBackgroundColorProperty);
+	        set => SetValue(IconBackgroundColorProperty, value);
+	    }
+
         #endregion
 
-	    #region Title Label Properties
+        #region Title Label Properties
 
-	    public static readonly BindableProperty TitleProperty =
+        public static readonly BindableProperty TitleProperty =
 	        BindableProperty.Create(
 	            nameof(Title),
 	            typeof(string),
@@ -217,6 +231,9 @@ namespace TestProject.Control
                 case "Icon":
                     BaseImage.Source = Icon;
                     break;
+                case "IconBackgroundColor":
+                    MyBoxView.BackgroundColor = IconBackgroundColor;
+                    break;
 
                 case "Title":
                     TitleLabel.Text = Title;
@@ -253,7 +270,8 @@ namespace TestProject.Control
 	        RowDefinition1.Height = ControlHeight;
 	        ProgressRing.RingThickness = ControlHeight * .08;
 	        BaseImage.Margin = ControlHeight * .05;
-	        BaseImage.HeightRequest = BaseImage.WidthRequest = ControlHeight * .65;
+	        BaseImage.HeightRequest = BaseImage.WidthRequest = ControlHeight * .50;
+	        MyBoxView.CornerRadius= MyBoxView.HeightRequest= MyBoxView.WidthRequest = ControlHeight * .70; ;
 
 	    }
 	   

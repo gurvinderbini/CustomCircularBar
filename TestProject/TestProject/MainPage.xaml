@@ -4,16 +4,14 @@
              xmlns:control="clr-namespace:TestProject.Control;assembly=TestProject"
              x:Class="TestProject.MainPage">
     <StackLayout>
-        <control:CustomProgressControl Margin="20" ProgressColor="Red" BaseColor="Blue" Progress=".9"
-                                       ControlHeight="100" Icon="google.png" 
-                                       Title="What is the fed?" TitleFontSize="15" TitleTextColor="Blue"
-                                       TotalProgressCount="3" CurrentProgressCount="1" StepCount="1">
-        </control:CustomProgressControl>
+      
 
-        <control:CustomProgressControl x:Name="CustomProgressControl" Margin="20" ProgressColor="#B3936D" BaseColor="#F5F4EF" Progress=".4"
-                                       ControlHeight="200" Icon="download.png" 
+        <control:CustomProgressControl x:Name="CustomProgressControl" Margin="20" 
+                                       ProgressColor="#B3936D" BaseColor="#F5F4EF" Progress=".4"
+                                       ControlHeight="200" Icon="home.png" 
                                        Title="Structure " TitleFontSize="15" TitleTextColor="#4F6C5A"
-                                       TotalProgressCount="3" CurrentProgressCount="2" StepCount="1">
+                                       TotalProgressCount="3" CurrentProgressCount="2" StepCount="1"
+                                       IconBackgroundColor="DarkGreen">
 
         </control:CustomProgressControl>
 

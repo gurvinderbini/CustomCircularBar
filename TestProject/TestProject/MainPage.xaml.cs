@@ -16,7 +16,12 @@ namespace TestProject
 
 	    private void Button_OnClicked(object sender, EventArgs e)
 	    {
-	        CustomProgressControl.Progress = .2;
+	        if (CustomProgressControl.Progress >= 1d)
+	        {
+	            CustomProgressControl.Progress = 0d;
+                return;
+	        }
+	        CustomProgressControl.Progress = CustomProgressControl.Progress+.1;
 	    }
     }
 }
