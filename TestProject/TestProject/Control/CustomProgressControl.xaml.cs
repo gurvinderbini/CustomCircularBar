@@ -7,12 +7,12 @@ using Xamarin.Forms.Xaml;
 namespace TestProject.Control
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CustomControl : ContentView
+	public partial class CustomProgressControl : ContentView
 	{
         private string CountLabelTitle=String.Empty;
 
         #region CTOR
-        public CustomControl()
+        public CustomProgressControl()
         {
             InitializeComponent();
             AdjustControlHeight();
@@ -25,7 +25,7 @@ namespace TestProject.Control
             BindableProperty.Create(
                 nameof(ProgressColor),
                 typeof(Color),
-                typeof(CustomControl),
+                typeof(CustomProgressControl),
                 Color.DodgerBlue);
 
         public Color ProgressColor
@@ -39,7 +39,7 @@ namespace TestProject.Control
 	        BindableProperty.Create(
 	            nameof(BaseColor),
 	            typeof(Color),
-	            typeof(CustomControl),
+	            typeof(CustomProgressControl),
 	            Color.Gray);
 	    
 	    public Color BaseColor
@@ -52,7 +52,7 @@ namespace TestProject.Control
 	        BindableProperty.Create(
 	            nameof(Progress),
 	            typeof(double),
-	            typeof(CustomControl),
+	            typeof(CustomProgressControl),
 	            0d);
 
 	    public double Progress
@@ -65,7 +65,7 @@ namespace TestProject.Control
 	        BindableProperty.Create(
 	            nameof(ControlHeight),
 	            typeof(double),
-	            typeof(CustomControl),
+	            typeof(CustomProgressControl),
 	            100d);
 
 	    public double ControlHeight
@@ -96,7 +96,7 @@ namespace TestProject.Control
 	        BindableProperty.Create(
 	            nameof(Icon),
 	            typeof(string),
-	            typeof(CustomControl),
+	            typeof(CustomProgressControl),
 	            string.Empty);
 
 	    public string Icon
@@ -112,7 +112,7 @@ namespace TestProject.Control
 	        BindableProperty.Create(
 	            nameof(Title),
 	            typeof(string),
-	            typeof(CustomControl),
+	            typeof(CustomProgressControl),
 	            string.Empty);
 
 	    public string Title
@@ -125,7 +125,7 @@ namespace TestProject.Control
 	        BindableProperty.Create(
 	            nameof(TitleFontSize),
 	            typeof(double),
-	            typeof(CustomControl),
+	            typeof(CustomProgressControl),
 	            20d);
 
 	    public double TitleFontSize
@@ -138,7 +138,7 @@ namespace TestProject.Control
 	        BindableProperty.Create(
 	            nameof(TitleTextColor),
 	            typeof(Color),
-	            typeof(CustomControl),
+	            typeof(CustomProgressControl),
 	            Color.Black);
 
 	    public Color TitleTextColor
@@ -151,7 +151,7 @@ namespace TestProject.Control
 	        BindableProperty.Create(
 	            nameof(StepCount),
 	            typeof(double),
-	            typeof(CustomControl),
+	            typeof(CustomProgressControl),
 	            0d);
 
 	    public double StepCount
@@ -167,7 +167,7 @@ namespace TestProject.Control
 	        BindableProperty.Create(
 	            nameof(TotalProgressCount),
 	            typeof(double),
-	            typeof(CustomControl),
+	            typeof(CustomProgressControl),
 	            0d);
 
 	    public double TotalProgressCount
@@ -180,7 +180,7 @@ namespace TestProject.Control
 	        BindableProperty.Create(
 	            nameof(CurrentProgressCount),
 	            typeof(double),
-	            typeof(CustomControl),
+	            typeof(CustomProgressControl),
 	            0d);
 
 	    public double CurrentProgressCount
@@ -199,7 +199,8 @@ namespace TestProject.Control
             switch (propertyName)
             {
                 case "ProgressColor":
-                    ProgressRing.RingProgressColor = ProgressColor;
+                    TotalCountLabel.TextColor = CurrentCountLabel.TextColor = 
+                        OfLabel.TextColor = ProgressRing.RingProgressColor = ProgressColor;
                     break;
                 case "BaseColor":
                     ProgressRing.RingBaseColor = BaseColor;
@@ -212,10 +213,7 @@ namespace TestProject.Control
                     ProgressRing.WidthRequest = ControlHeight;
                     AdjustControlHeight();
                     break;
-
-                //case "IconHeight":
-                //    BaseImage.HeightRequest=BaseImage.WidthRequest = IconHeight;
-                //    break;
+        
                 case "Icon":
                     BaseImage.Source = Icon;
                     break;

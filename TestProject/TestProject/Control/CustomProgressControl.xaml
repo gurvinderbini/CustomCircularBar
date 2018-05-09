@@ -2,7 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:control="clr-namespace:TestProject.Control;assembly=TestProject"
-             x:Class="TestProject.Control.CustomControl">
+             x:Class="TestProject.Control.CustomProgressControl">
     <ContentView.Content >
         <Grid RowSpacing="0">
             <Grid.RowDefinitions>
@@ -21,9 +21,9 @@
             </StackLayout>
             
             <StackLayout  Grid.Row="2" Orientation="Horizontal" Spacing="2"  HorizontalOptions="CenterAndExpand">
-                <Label x:Name="CurrentCountLabel" Text="1" FontSize="Small" TextColor="#B3936D"/>
-                <Label Text="of" FontSize="Small" TextColor="#B3936D"/>
-                <Label x:Name="TotalCountLabel" Text="3" FontSize="Small" TextColor="#B3936D"/>
+                <Label x:Name="CurrentCountLabel" Text="1" FontSize="Small" />
+                <Label  x:Name="OfLabel" Text="of" FontSize="Small" />
+                <Label x:Name="TotalCountLabel" Text="3" FontSize="Small" />
             </StackLayout>
         </Grid>
     </ContentView.Content>

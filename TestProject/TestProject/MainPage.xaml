@@ -4,19 +4,20 @@
              xmlns:control="clr-namespace:TestProject.Control;assembly=TestProject"
              x:Class="TestProject.MainPage">
     <StackLayout>
-        <control:CustomControl Margin="20" ProgressColor="Red" BaseColor="Blue" Progress=".9"
-                           ControlHeight="200" Icon="google.png" 
-                           Title="What is the fed?" TitleFontSize="15" TitleTextColor="Blue"
-                           TotalProgressCount="3" CurrentProgressCount="1" StepCount="1">
-        </control:CustomControl>
-        <control:CustomControl Margin="20" ProgressColor="#B3936D" BaseColor="#F5F4EF" Progress=".4"
-                               ControlHeight="200" Icon="download.png" 
-                               Title="Structure " TitleFontSize="15" TitleTextColor="#4F6C5A"
-                               TotalProgressCount="3" CurrentProgressCount="2" StepCount="1">
+        <control:CustomProgressControl Margin="20" ProgressColor="Red" BaseColor="Blue" Progress=".9"
+                                       ControlHeight="100" Icon="google.png" 
+                                       Title="What is the fed?" TitleFontSize="15" TitleTextColor="Blue"
+                                       TotalProgressCount="3" CurrentProgressCount="1" StepCount="1">
+        </control:CustomProgressControl>
 
-        </control:CustomControl>
+        <control:CustomProgressControl x:Name="CustomProgressControl" Margin="20" ProgressColor="#B3936D" BaseColor="#F5F4EF" Progress=".4"
+                                       ControlHeight="200" Icon="download.png" 
+                                       Title="Structure " TitleFontSize="15" TitleTextColor="#4F6C5A"
+                                       TotalProgressCount="3" CurrentProgressCount="2" StepCount="1">
 
+        </control:CustomProgressControl>
 
+<Button Text="Update" Clicked="Button_OnClicked"></Button>
     </StackLayout>
 
 

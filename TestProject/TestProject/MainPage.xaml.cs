@@ -13,5 +13,10 @@ namespace TestProject
 		{
 			InitializeComponent();
 		}
-	}
+
+	    private void Button_OnClicked(object sender, EventArgs e)
+	    {
+	        CustomProgressControl.Progress = .2;
+	    }
+    }
 }
