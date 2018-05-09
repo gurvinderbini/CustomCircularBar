@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Image x:Name="BaseImage" Grid.Row="0" Source="demo.png" Aspect="AspectFit"  
+            <Image x:Name="BaseImage" Grid.Row="0"  Aspect="AspectFit"  
                    HorizontalOptions="Center" VerticalOptions="Center" ></Image>
             <plugin:ProgressRing x:Name="ProgressRing" Grid.Row="0"/>
           <Label Grid.Row="1" HorizontalOptions="CenterAndExpand" Text="1. What is the fed?"

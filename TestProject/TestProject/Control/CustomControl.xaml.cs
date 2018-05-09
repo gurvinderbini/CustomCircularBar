@@ -13,13 +13,16 @@ namespace TestProject.Control
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CustomControl : ContentView
 	{
+        
+
 		public CustomControl ()
 		{
 			InitializeComponent ();
 		    AdjustControlHeight();
+		  //  BaseImage.HeightRequest = BaseImage.WidthRequest = ControlHeight * .5;
 
 
-		}
+        }
 
         #region Progress Bar Properties
 
@@ -76,18 +79,44 @@ namespace TestProject.Control
 	        set => SetValue(ControlHeightProperty, value);
 	    }
 
-	    //public static readonly BindableProperty ControlWidthProperty =
+	    //public static readonly BindableProperty IconHeightProperty =
 	    //    BindableProperty.Create(
-	    //        nameof(ControlWidth),
+	    //        nameof(IconHeight),
 	    //        typeof(double),
 	    //        typeof(CustomControl),
 	    //        100d);
 
-	    //public double ControlWidth
-	    //{
-	    //    get => (double)GetValue(ControlWidthProperty);
-	    //    set => SetValue(ControlWidthProperty, value);
+	    //public double IconHeight
+     //   {
+	    //    get => (double)GetValue(IconHeightProperty);
+	    //    set => SetValue(IconHeightProperty, value);
 	    //}
+
+	    public static readonly BindableProperty IconProperty =
+	        BindableProperty.Create(
+	            nameof(Icon),
+	            typeof(string),
+	            typeof(CustomControl),
+	            string.Empty);
+
+	    public string Icon
+	    {
+	        get => (string)GetValue(IconProperty);
+	        set => SetValue(IconProperty, value);
+	    }
+
+        //public static readonly BindableProperty ControlWidthProperty =
+        //    BindableProperty.Create(
+        //        nameof(ControlWidth),
+        //        typeof(double),
+        //        typeof(CustomControl),
+        //        100d);
+
+        //public double ControlWidth
+        //{
+        //    get => (double)GetValue(ControlWidthProperty);
+        //    set => SetValue(ControlWidthProperty, value);
+        //}
         #endregion
 
 
@@ -111,7 +140,14 @@ namespace TestProject.Control
 	                ProgressRing.WidthRequest = ControlHeight;
                     AdjustControlHeight();
                     break;
-	           
+
+	            //case "IconHeight":
+	            //    BaseImage.HeightRequest=BaseImage.WidthRequest = IconHeight;
+	            //    break;
+	            case "Icon":
+	                BaseImage.Source = Icon;
+	                break;
+
             }
 	     
         }
@@ -123,13 +159,9 @@ namespace TestProject.Control
 	    {
 	        RowDefinition1.Height = ControlHeight;
 	        ProgressRing.RingThickness = ControlHeight * .08;
-
-            BaseImage.HeightRequest= BaseImage.WidthRequest = ControlHeight * .5;
-           
 	        BaseImage.Margin = ControlHeight * .05;
-	        
-
-	    }
+	        BaseImage.HeightRequest = BaseImage.WidthRequest = ControlHeight * .65;
+        }
 	   
         #endregion
     }
