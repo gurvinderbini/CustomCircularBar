@@ -14,8 +14,7 @@
             <Image x:Name="BaseImage" Grid.Row="0"  Aspect="AspectFit"  
                    HorizontalOptions="Center" VerticalOptions="Center" ></Image>
             <plugin:ProgressRing x:Name="ProgressRing" Grid.Row="0"/>
-          <Label Grid.Row="1" HorizontalOptions="CenterAndExpand" Text="1. What is the fed?"
-                 TextColor="DarkGreen" FontSize="Small"></Label>
+          <Label x:Name="TitleLabel" Grid.Row="1" HorizontalOptions="CenterAndExpand" ></Label>
           <Label Grid.Row="2" HorizontalOptions="CenterAndExpand" Text="1 of 3"
                  TextColor="Gray" FontSize="Micro"></Label>
         </Grid>

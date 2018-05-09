@@ -6,7 +6,8 @@
              x:Class="TestProject.MainPage">
 
     <control:CustomControl Margin="20" ProgressColor="Red" BaseColor="Blue" Progress=".9"
-                           ControlHeight="200" Icon="google.png" >
+                           ControlHeight="200" Icon="google.png" 
+                           Title="What is this fed?" TitleFontSize="15" TitleTextColor="Blue">
       
     </control:CustomControl>
 

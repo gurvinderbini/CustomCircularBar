@@ -13,16 +13,13 @@ namespace TestProject.Control
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CustomControl : ContentView
 	{
-        
-
-		public CustomControl ()
-		{
-			InitializeComponent ();
-		    AdjustControlHeight();
-		  //  BaseImage.HeightRequest = BaseImage.WidthRequest = ControlHeight * .5;
-
-
-        }
+        #region CTOR
+        public CustomControl()
+        {
+            InitializeComponent();
+            AdjustControlHeight();
+        } 
+        #endregion
 
         #region Progress Bar Properties
 
@@ -79,19 +76,24 @@ namespace TestProject.Control
 	        set => SetValue(ControlHeightProperty, value);
 	    }
 
-	    //public static readonly BindableProperty IconHeightProperty =
-	    //    BindableProperty.Create(
-	    //        nameof(IconHeight),
-	    //        typeof(double),
-	    //        typeof(CustomControl),
-	    //        100d);
+        //public static readonly BindableProperty IconHeightProperty =
+        //    BindableProperty.Create(
+        //        nameof(IconHeight),
+        //        typeof(double),
+        //        typeof(CustomControl),
+        //        100d);
 
-	    //public double IconHeight
-     //   {
-	    //    get => (double)GetValue(IconHeightProperty);
-	    //    set => SetValue(IconHeightProperty, value);
-	    //}
+        //public double IconHeight
+        //   {
+        //    get => (double)GetValue(IconHeightProperty);
+        //    set => SetValue(IconHeightProperty, value);
+        //}
 
+
+
+        #endregion
+
+        #region Image Properties
 	    public static readonly BindableProperty IconProperty =
 	        BindableProperty.Create(
 	            nameof(Icon),
@@ -104,21 +106,49 @@ namespace TestProject.Control
 	        get => (string)GetValue(IconProperty);
 	        set => SetValue(IconProperty, value);
 	    }
-
-        //public static readonly BindableProperty ControlWidthProperty =
-        //    BindableProperty.Create(
-        //        nameof(ControlWidth),
-        //        typeof(double),
-        //        typeof(CustomControl),
-        //        100d);
-
-        //public double ControlWidth
-        //{
-        //    get => (double)GetValue(ControlWidthProperty);
-        //    set => SetValue(ControlWidthProperty, value);
-        //}
         #endregion
 
+	    #region Title Label Properties
+
+	    public static readonly BindableProperty TitleProperty =
+	        BindableProperty.Create(
+	            nameof(Title),
+	            typeof(string),
+	            typeof(CustomControl),
+	            string.Empty);
+
+	    public string Title
+        {
+	        get => (string)GetValue(TitleProperty);
+	        set => SetValue(TitleProperty, value);
+	    }
+
+	    public static readonly BindableProperty TitleFontSizeProperty =
+	        BindableProperty.Create(
+	            nameof(TitleFontSize),
+	            typeof(double),
+	            typeof(CustomControl),
+	            20d);
+
+	    public double TitleFontSize
+	    {
+	        get => (double)GetValue(TitleFontSizeProperty);
+	        set => SetValue(TitleFontSizeProperty, value);
+	    }
+
+	    public static readonly BindableProperty TitleTextColorProperty =
+	        BindableProperty.Create(
+	            nameof(TitleTextColor),
+	            typeof(Color),
+	            typeof(CustomControl),
+	            Color.Black);
+
+	    public Color TitleTextColor
+	    {
+	        get => (Color)GetValue(TitleTextColorProperty);
+	        set => SetValue(TitleTextColorProperty, value);
+	    }
+        #endregion
 
         protected override void OnPropertyChanged(string propertyName = null)
 	    {
@@ -147,6 +177,17 @@ namespace TestProject.Control
 	            case "Icon":
 	                BaseImage.Source = Icon;
 	                break;
+
+	            case "Title":
+	                TitleLabel.Text = Title;
+	                break;
+	            case "TitleFontSize":
+	                TitleLabel.FontSize = TitleFontSize;
+	                break;
+	            case "TitleTextColor":
+	                TitleLabel.TextColor = TitleTextColor;
+	                break;
+
 
             }
 	     
