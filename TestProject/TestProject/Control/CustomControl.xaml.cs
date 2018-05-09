@@ -245,7 +245,8 @@ namespace TestProject.Control
 	        ProgressRing.RingThickness = ControlHeight * .08;
 	        BaseImage.Margin = ControlHeight * .05;
 	        BaseImage.HeightRequest = BaseImage.WidthRequest = ControlHeight * .65;
-        }
+
+	    }
 	   
         #endregion
     }
