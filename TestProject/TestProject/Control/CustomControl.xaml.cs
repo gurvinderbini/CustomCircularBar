@@ -121,10 +121,14 @@ namespace TestProject.Control
 
 	    private void AdjustControlHeight()
 	    {
-	        BaseImage.HeightRequest = ControlHeight * .8;
-	        BaseImage.WidthRequest = ControlHeight * .8;
-            ProgressRing.RingThickness = ControlHeight * .08;
+	        RowDefinition1.Height = ControlHeight;
+	        ProgressRing.RingThickness = ControlHeight * .08;
+
+            BaseImage.HeightRequest= BaseImage.WidthRequest = ControlHeight * .5;
+           
 	        BaseImage.Margin = ControlHeight * .05;
+	        
+
 	    }
 	   
         #endregion

@@ -6,7 +6,7 @@
   <ContentView.Content >
       <Grid RowSpacing="0">
           <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition x:Name="RowDefinition1" Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
